@@ -205,10 +205,10 @@ const moviesController = {
 
     search: async (req, res) => {
         try {
-            const { title } = req.body;
-            const api = "http://www.omdbapi.com/?apikey=a93897b9&t=";
-            const movie = await fetch( api + title)
-                .then(res => res.json());
+            const { title } = req.body;//desestructuro title del body
+            const api = "http://www.omdbapi.com/?apikey=a93897b9&t=";//api key mandada por proveedor
+            const movie = await fetch( api + title)//metodo fetch 
+                .then(res => res.json());//paso a json el res de la api
             let respuesta = {
                 meta: {
                     status: 200,
